@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="simpleINFMprofilepage.css">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content=" Discover your data personality with Ivy Tech's interactive Informatics activity and explore degree and certificate options in IT.">
+  <meta name="author" content="Ivy Tech Community College">
+  <meta name="keywords" content="Ivy Tech, Informatics, Information Technology, Interactive Activity, Data Personality, Community College, Associate Degree, Certificates">
+  <meta name="theme-color" content="#006647">
+
+  <link rel="icon" href="https://www.ivytech.edu/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="ivytech_style.css">
+  <title>Discover Your Data Personality | Ivy Tech Informatics</title>
+</head>
+
+<body>
+  <h2>Discover Your Data Personality | Ivy Tech Informatics!</h2>
+  <label>Favorite Tech Tool:
+    <select id="tool">
+      <option>Google Sheets</option>
+        "Google Sheets": "Data Visualizer - Thrives on organizing and visualizing information. You see stories in spreadsheets and patterns in numbers",
+      <option>Microsoft Excel</option>
+      <option>VS Code</option>
+      <option>Canva</option>
+      <option>SQL Database</option>
+      <option>Python Script</option>
+      <option>HTML/CSS</option>
+      <option>Network Router</option>
+      <option>AI Chatbot</option>
+      <option>Firewall</option>
+      <option>Git Version Control</option>
+      <option>JavaScript Listener</option>
+      <option>Linux Terminal</option>
+    </select>
+  </label><br><br>
+  
+  <label>Average Screen Time (hours/day):
+    <input type="number" id="screenTime" min="0" max="24" />
+  </label><br><br>
+  
+  <label>Favorite Color:
+    <input type="color" id="favColor" />
+  </label><br><br>
+  
+  <button onclick="generateProfile()">Generate My Profile</button>
+  <div id="result"></div>
+
+  <script>
+    function generateProfile() {
+      const tool = document.getElementById("tool").value;
+      const screenTime = parseInt(document.getElementById("screenTime").value);
+      const color = document.getElementById("favColor").value;
+
+      let personality = "";
+
+      if (screenTime <= 2) {
+        personality = "Balanced Analyst";
+      } else if (screenTime <= 5) {
+        personality = "Creative Coder";
+      } else {
+        personality = "Digital Power User";
+      }
+
+      const toolBonus = {
+        "Google Sheets": "Data Visualizer! You thrive on organizing and visualizing information. You see stories in spreadsheets and patterns in numbers",
+        "Microsoft Excel": "Data Visualizer! You're detail-oriented and analytical! You enjoy making data interactive and impactful through formulas, charts, and precision",
+        "VS Code": "Builder! You're a hands-on creator who loves solving problems with code. You value clean design, modular thinking, and efficiency",
+        "Canva": "UX Innovator who blends creativity with usability - designing experiences that are both intuitive and beautiful. You make tech human",
+        "SQL Database": "Organizer who loves structure, details, and everything in its right place",
+        "Python Script": "Problem Solver! You're logical, flexible, and always looking for efficient solutions",
+        "HTML/CSS": "Designer! You're visual, creative, and passionate about how things look and feel.",
+        "Network Router": "Connector! You're great at linking people, systems, and ideas together",
+        "Data Dashboard": "Analyst who loves interpreting data and making sense of patterns",
+        "AI Chatbot": "Helper! You're responsive, conversational, and always there to assist",
+        "Firewall": "Protector! You're cautious, rule-oriented, and keep systems and people safe.",
+        "Git Version Control": "Collaborator that works great in a team, tracks changes, and ensures everyone’s on the same page",
+        "JavaScript Listener": "Observer! You notice every detail and respond to specific triggers",
+        "Linux Terminal": "Power User! You're independent, efficient, and get things done behind the scenes",
+      }
+
+      document.getElementById("result").innerHTML = `
+        <p>You are a <span style="color:${color}">${personality}</span> and a ${toolBonus[tool]}!</p>
+      `;
+    }
+  </script>
+</body>
+<hr style="margin-top: 3rem;">
+<h3>Explore Informatics Credentials</h3>
+<p>Learn about the degree and certificate options available through Ivy Tech:</p>
+<a href="https://www.ivytech.edu/programs/all-academic-programs/school-of-information-technology/information-technology-and-informatics/" target="_blank">
+  <img src="degree-types-offered.png" alt="Degree Types Offered by Ivy Tech" style="width: 100%; max-width: 800px; border: 1px solid #ccc; border-radius: 8px;">
+</a>
+</html>
+

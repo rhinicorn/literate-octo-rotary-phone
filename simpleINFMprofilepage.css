@@ -1,0 +1,143 @@
+/* Ivy Tech Branding - CSS Style for Data Personality Profiler */
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #006647 0%, #003057 100%); /* Ivy Tech green to blue */
+  color: #ffffff;
+  padding: 2rem;
+  max-width: 700px;
+  margin: auto;
+}
+
+h2 {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 0.5rem;
+}
+
+label {
+  display: block;
+  margin: 1rem 0 0.5rem;
+  font-weight: bold;
+}
+
+input[type="number"],
+input[type="color"],
+select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #ffffff;
+  color: #006647;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #e0e0e0;
+}
+
+#result {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-left: 5px solid #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  font-size: 1.1rem;
+}
+
+span[style^="color:"] {
+  font-weight: bold;
+}
+
+/* Tool + Personality Output Styles */
+#result strong {
+  display: block;
+  margin-top: 1rem;
+  color: #ffe600;
+}
+
+/* Additions to the HTML for new tool/personality matches */
+<script>
+  function getProfile(score) {
+    if (score >= 90) {
+      return {
+        tool: "SQL Database",
+        personality: "The Organizer",
+        description: "Loves structure, details, and everything in its right place."
+      };
+    } else if (score >= 80) {
+      return {
+        tool: "Python Script",
+        personality: "The Problem Solver",
+        description: "Logical, flexible, and always looking for efficient solutions."
+      };
+    } else if (score >= 70) {
+      return {
+        tool: "HTML/CSS",
+        personality: "The Designer",
+        description: "Visual, creative, and passionate about how things look and feel."
+      };
+    } else if (score >= 60) {
+      return {
+        tool: "Network Router",
+        personality: "The Connector",
+        description: "Great at linking people, systems, and ideas together."
+      };
+    } else if (score >= 50) {
+      return {
+        tool: "Data Dashboard",
+        personality: "The Analyst",
+        description: "Loves interpreting data and making sense of patterns."
+      };
+    } else if (score >= 40) {
+      return {
+        tool: "AI Chatbot",
+        personality: "The Helper",
+        description: "Responsive, conversational, and always there to assist."
+      };
+    } else if (score >= 30) {
+      return {
+        tool: "Firewall",
+        personality: "The Protector",
+        description: "Cautious, rule-oriented, and keeps systems and people safe."
+      };
+    } else if (score >= 20) {
+      return {
+        tool: "Git Version Control",
+        personality: "The Collaborator",
+        description: "Great in teams, tracks changes, and ensures everyone’s on the same page."
+      };
+    } else if (score >= 10) {
+      return {
+        tool: "JavaScript Listener",
+        personality: "The Observer",
+        description: "Notices every detail and responds to specific triggers."
+      };
+    } else {
+      return {
+        tool: "Linux Terminal",
+        personality: "The Power User",
+        description: "Independent, efficient, and gets things done behind the scenes."
+      };
+    }
+  }
+
+  function showResult(score) {
+    const profile = getProfile(score);
+    document.getElementById("result").innerHTML =
+      `<strong>Your Tool:</strong> ${profile.tool}<br>` +
+      `<strong>Your Personality:</strong> ${profile.personality}<br>` +
+      `<em>${profile.description}</em>`;
+  }
+</script>
